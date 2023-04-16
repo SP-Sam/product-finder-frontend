@@ -97,7 +97,14 @@ const Home: NextPage = () => {
       </SearchBar>
 
       <main className="flex flex-col justify-center gap-2 w-[850px] mb-6 mt-4">
-        {isLoading ? (
+        <ProductCard
+          category="Galaxy S22 Ultra"
+          description="Smartphone Samsung Galaxy S21 5G Usado 128GB Câmera Tripla"
+          imageUrl="https://i.zst.com.br/thumbs/45/28/10/-268374750.jpg"
+          price="R$ 1.869,00"
+          website="https://www.buscape.com.br/lead?oid=882357218&channel=39&index=0&searchterm=Galaxy%20S22%20Ultra"
+        />
+        {/* {isLoading ? (
           <Loader classes="w-[50px] h-[50px]" />
         ) : (
           products.map((product, index) => {
@@ -112,7 +119,7 @@ const Home: NextPage = () => {
               />
             );
           })
-        )}
+        )} */}
       </main>
     </div>
   );

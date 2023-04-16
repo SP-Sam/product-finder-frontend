@@ -17,6 +17,12 @@ module.exports = {
         'primary-blue-dark': '#0448b3',
       },
     },
+    screens: {
+      mobile: '320px',
+      tablet: '640px',
+      laptop: '1024px',
+      desktop: '1280px',
+    },
   },
   plugins: [],
 };
