@@ -11,6 +11,7 @@ import { Input } from '@/components/Input';
 import { Select } from '@/components/Select';
 import { Button } from '@/components/Button';
 import { Loader } from '@/components/Loader';
+import { ProductCard } from '@/components/ProductCard';
 
 const Home: NextPage = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -63,10 +64,10 @@ const Home: NextPage = () => {
   }, [searchTerm, website, category]);
 
   return (
-    <div className="flex flex-col items-center w-screen h-screen bg-neutral-200">
+    <div className="flex flex-col items-center w-full min-h-screen">
       <SearchBar>
         <form
-          className="flex justify-center gap-2 items-center w-[1024px] h-[75px]"
+          className="flex justify-between items-center w-[850px] h-[75px]"
           onSubmit={searchProducts}
         >
           <Select
@@ -87,14 +88,32 @@ const Home: NextPage = () => {
           <Input value={searchTerm} handleChange={handleChange} />
 
           <Button
-            text="Search"
+            text="Buscar"
+            type="submit"
             disabled={isButtonDisabled}
             isLoading={isLoading}
           />
         </form>
       </SearchBar>
 
-      {isLoading && <Loader classes="w-[50px] h-[50px]" />}
+      <main className="flex flex-col justify-center gap-2 w-[850px] mb-6 mt-4">
+        {isLoading ? (
+          <Loader classes="w-[50px] h-[50px]" />
+        ) : (
+          products.map((product, index) => {
+            return (
+              <ProductCard
+                key={`product-${index}`}
+                category={product.category}
+                description={product.description}
+                imageUrl={product.imageUrl}
+                price={product.price}
+                website={product.website}
+              />
+            );
+          })
+        )}
+      </main>
     </div>
   );
 };
