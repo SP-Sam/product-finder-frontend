@@ -79,7 +79,7 @@ npm test
 
 #### Você verá algo parecido com isso no terminal
 
-<img src="./src/assets/tests-demo.png" alt="">
+<img src="./public/testes.png" alt="">
 
 #### os testes serão executados no `watch mode` do Jest. Para sair do `watch mode` basta apertar a tecla `q` ou `Ctrl+C`.
 
