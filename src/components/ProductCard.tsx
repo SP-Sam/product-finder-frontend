@@ -10,12 +10,16 @@ export const ProductCard: React.FC<IProduct> = ({
   website,
 }) => {
   return (
-    <div className="flex flex-col justify-between max-w-[250px] laptop:max-w-[850px] items-center laptop:items-stretch laptop:flex-row laptop:justify-around bg-white border border-gray-300 rounded-lg ">
+    <div
+      className="flex flex-col justify-between max-w-[250px] laptop:max-w-[850px] items-center laptop:items-stretch laptop:flex-row laptop:justify-around bg-white border border-gray-300 rounded-lg"
+      data-testid="product-card"
+    >
       <div className="max-w-[175px] min-h-[175px] min-w-[175px] p-2">
         {imageUrl.startsWith('http') ? (
-          <img src={imageUrl} alt={description} />
+          <img data-testid="product-image" src={imageUrl} alt={description} />
         ) : (
           <img
+            data-testid="product-image"
             src="https://i.zst.com.br/thumbs/51/indsp.gif"
             alt={description}
           />
@@ -26,8 +30,12 @@ export const ProductCard: React.FC<IProduct> = ({
         <h2 className="laptop:text-xl font-bold text-center laptop:text-start">
           {description}
         </h2>
-        <p className="text-sm laptop:text-base">{category}</p>
-        <p className="laptop:text-xl font-bold">{price}</p>
+        <p className="text-sm laptop:text-base" data-testid="product-category">
+          {category}
+        </p>
+        <p className="laptop:text-xl font-bold" data-testid="product-price">
+          {price}
+        </p>
       </div>
 
       <div className="flex justify-center laptop:items-center pb-2 w-full laptop:w-auto">

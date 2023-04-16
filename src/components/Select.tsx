@@ -20,6 +20,7 @@ export const Select: React.FC<Props> = ({
         name={type}
         disabled={hasSearchTerm}
         className="disabled:cursor-not-allowed disabled:hover:bg-[#001b45]"
+        data-testid="select"
       >
         <option value="" disabled selected>
           {type === 'website' ? 'Website' : 'Categorias'}
