@@ -71,7 +71,7 @@ npm start
 
 ## 🧪 Executando os testes do projeto
 
-O Contacts Manager possui testes unitários. Para executa-los abra um terminal na raiz do projeto e rode o seguinte comando:
+O Product Finder possui testes unitários. Para executa-los abra um terminal na raiz do projeto e rode o seguinte comando:
 
 ```bash
 npm test
