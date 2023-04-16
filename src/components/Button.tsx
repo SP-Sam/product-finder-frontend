@@ -30,7 +30,7 @@ export const Button: React.FC<Props> = ({
         <a
           href={url}
           target="_blank"
-          className="bg-primary-blue text-white rounded-lg rounded-lg w-28 py-2 hover:bg-primary-blue-dark transition-all disabled:cursor-not-allowed disabled:bg-primary-blue flex justify-center items-center max-h-10"
+          className="bg-primary-blue text-white rounded-lg rounded-lg w-11/12 laptop:w-28 py-2 hover:bg-primary-blue-dark transition-all disabled:cursor-not-allowed disabled:bg-primary-blue flex justify-center items-center max-h-10"
         >
           {text}
         </a>

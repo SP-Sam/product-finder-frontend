@@ -5,5 +5,5 @@ interface Props {
 }
 
 export const SearchBar: React.FC<Props> = ({ children }) => {
-  return <header>{children}</header>;
+  return <header className="flex w-full justify-center">{children}</header>;
 };

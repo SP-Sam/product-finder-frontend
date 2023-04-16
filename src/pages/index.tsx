@@ -64,41 +64,46 @@ const Home: NextPage = () => {
   }, [searchTerm, website, category]);
 
   return (
-    <div className="flex flex-col items-center w-full min-h-screen">
+    <div className="flex flex-col items-center min-h-screen">
       <SearchBar>
         <form
-          className="flex justify-between items-center w-[850px] h-[75px]"
+          className="flex flex-col-reverse gap-2 w-11/12 items-start h-[100px] laptop:flex-row laptop:justify-between laptop:items-center laptop:w-[850px] laptop:h-[75px]"
           onSubmit={searchProducts}
         >
-          <Select
-            options={[Websites.MELI, Websites.BUSCAPE]}
-            type="website"
-            handleChange={onChangeOption}
-          />
-          <Select
-            options={[
-              Categories.REFRIGERATOR,
-              Categories.TV,
-              Categories.CELLPHONE,
-            ]}
-            type="category"
-            handleChange={onChangeOption}
-            hasSearchTerm={!!searchTerm}
-          />
-          <Input value={searchTerm} handleChange={handleChange} />
+          <div className="flex gap-2 w-full laptop:w-auto">
+            <Select
+              options={[Websites.MELI, Websites.BUSCAPE]}
+              type="website"
+              handleChange={onChangeOption}
+            />
+            <Select
+              options={[
+                Categories.REFRIGERATOR,
+                Categories.TV,
+                Categories.CELLPHONE,
+              ]}
+              type="category"
+              handleChange={onChangeOption}
+              hasSearchTerm={!!searchTerm}
+            />
+          </div>
 
-          <Button
-            text="Buscar"
-            type="submit"
-            disabled={isButtonDisabled}
-            isLoading={isLoading}
-          />
+          <div className="flex gap-2 w-full">
+            <Input value={searchTerm} handleChange={handleChange} />
+
+            <Button
+              text="Buscar"
+              type="submit"
+              disabled={isButtonDisabled}
+              isLoading={isLoading}
+            />
+          </div>
         </form>
       </SearchBar>
 
-      <main className="flex flex-col justify-center gap-2 w-[850px] mb-6 mt-4">
+      <main className="grid tablet:grid-cols-2 tablet-g:grid-cols-3 laptop:flex laptop:flex-col justify-center gap-2 mb-6 mt-4">
         {isLoading ? (
-          <Loader classes="w-[50px] h-[50px]" />
+          <Loader classes="w-[50px] h-[50px] my-[200px] mx-auto" />
         ) : (
           products.map((product, index) => {
             return (
