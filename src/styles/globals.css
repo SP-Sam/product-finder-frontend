@@ -67,3 +67,20 @@ select,
   grid-area: select;
   justify-self: end;
 }
+
+.loader {
+  border: 5px solid transparent;
+  border-top: 5px solid #ffffff;
+  border-right: 5px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

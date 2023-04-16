@@ -1,13 +1,15 @@
-import { Categories } from '@/enums';
+export type CategoryTypes = 'Celular' | 'Geladeira' | 'TV';
+
+export type WebsiteTypes = 'Mercado Livre' | 'Buscapé';
 
 export interface ISearchByCategory {
-  website: 'Mercado Livre' | 'Buscapé';
-  category: Categories;
+  website: string;
+  category?: string;
 }
 
 export interface ISearchByTerm {
-  website: 'Mercado Livre' | 'Buscapé';
-  searchTerm: string;
+  website: string;
+  searchTerm?: string;
 }
 
 export interface IProduct {
