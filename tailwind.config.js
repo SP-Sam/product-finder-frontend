@@ -20,7 +20,8 @@ module.exports = {
     screens: {
       mobile: '320px',
       tablet: '640px',
-      laptop: '1024px',
+      'tablet-g': '800px',
+      laptop: '900px',
       desktop: '1280px',
     },
   },

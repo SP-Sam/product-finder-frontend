@@ -10,7 +10,7 @@ export const ProductCard: React.FC<IProduct> = ({
   website,
 }) => {
   return (
-    <div className="flex flex-col max-w-[200px] laptop:max-w-[850px] items-center laptop:items-stretch laptop:flex-row laptop:justify-around bg-white border border-gray-300 rounded-lg ">
+    <div className="flex flex-col max-w-[250px] laptop:max-w-[850px] items-center laptop:items-stretch laptop:flex-row laptop:justify-around bg-white border border-gray-300 rounded-lg ">
       <div className="max-w-[175px] min-h-[175px] min-w-[175px] p-2">
         {imageUrl.startsWith('http') ? (
           <img src={imageUrl} alt={description} />
@@ -22,7 +22,7 @@ export const ProductCard: React.FC<IProduct> = ({
         )}
       </div>
 
-      <div className="flex flex-col items-center laptop:items-start justify-around laptop:w-2/4">
+      <div className="flex flex-col gap-2 my-2 items-center laptop:items-start justify-around laptop:w-2/4">
         <h2 className="laptop:text-xl font-bold text-center laptop:text-start">
           {description}
         </h2>
