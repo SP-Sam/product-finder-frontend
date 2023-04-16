@@ -101,10 +101,10 @@ const Home: NextPage = () => {
         </form>
       </SearchBar>
 
+      {isLoading && <Loader classes="w-[50px] h-[50px] mt-32" />}
+
       <main className="grid tablet:grid-cols-2 tablet-g:grid-cols-3 laptop:flex laptop:flex-col justify-center gap-2 mb-6 mt-4">
-        {isLoading ? (
-          <Loader classes="w-[50px] h-[50px] my-[200px] mx-auto" />
-        ) : (
+        {!isLoading &&
           products.map((product, index) => {
             return (
               <ProductCard
@@ -116,8 +116,7 @@ const Home: NextPage = () => {
                 website={product.website}
               />
             );
-          })
-        )}
+          })}
       </main>
     </div>
   );
