@@ -64,35 +64,40 @@ const Home: NextPage = () => {
   }, [searchTerm, website, category]);
 
   return (
-    <div className="flex flex-col items-center w-full min-h-screen">
+    <div className="flex flex-col items-center min-h-screen">
       <SearchBar>
         <form
-          className="flex justify-between items-center w-[850px] h-[75px]"
+          className="flex flex-col-reverse gap-2 w-11/12 items-start h-[100px] laptop:flex-row laptop:justify-between laptop:items-center laptop:w-[850px] laptop:h-[75px]"
           onSubmit={searchProducts}
         >
-          <Select
-            options={[Websites.MELI, Websites.BUSCAPE]}
-            type="website"
-            handleChange={onChangeOption}
-          />
-          <Select
-            options={[
-              Categories.REFRIGERATOR,
-              Categories.TV,
-              Categories.CELLPHONE,
-            ]}
-            type="category"
-            handleChange={onChangeOption}
-            hasSearchTerm={!!searchTerm}
-          />
-          <Input value={searchTerm} handleChange={handleChange} />
+          <div className="flex gap-2 w-full laptop:w-auto">
+            <Select
+              options={[Websites.MELI, Websites.BUSCAPE]}
+              type="website"
+              handleChange={onChangeOption}
+            />
+            <Select
+              options={[
+                Categories.REFRIGERATOR,
+                Categories.TV,
+                Categories.CELLPHONE,
+              ]}
+              type="category"
+              handleChange={onChangeOption}
+              hasSearchTerm={!!searchTerm}
+            />
+          </div>
 
-          <Button
-            text="Buscar"
-            type="submit"
-            disabled={isButtonDisabled}
-            isLoading={isLoading}
-          />
+          <div className="flex gap-2 w-full">
+            <Input value={searchTerm} handleChange={handleChange} />
+
+            <Button
+              text="Buscar"
+              type="submit"
+              disabled={isButtonDisabled}
+              isLoading={isLoading}
+            />
+          </div>
         </form>
       </SearchBar>
 
