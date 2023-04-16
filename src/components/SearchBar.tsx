@@ -5,5 +5,5 @@ interface Props {
 }
 
 export const SearchBar: React.FC<Props> = ({ children }) => {
-  return <header className="">{children}</header>;
+  return <header>{children}</header>;
 };
