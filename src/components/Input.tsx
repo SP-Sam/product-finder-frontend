@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface Props {
-  handleChange: () => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
 }
 

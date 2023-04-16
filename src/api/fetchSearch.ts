@@ -1,4 +1,4 @@
-import { ISearchByCategory, IProduct, ISearchByTerm } from '@/interfaces';
+import { ISearchByCategory, ISearchByTerm } from '@/interfaces';
 import axios from 'axios';
 
 export const searchByCategory = async (search: ISearchByCategory) => {
@@ -8,7 +8,7 @@ export const searchByCategory = async (search: ISearchByCategory) => {
       { website: search.website, category: search.category }
     );
 
-    console.log(data);
+    return data;
   } catch (e: any) {
     window.alert(e.message);
   }
@@ -21,7 +21,7 @@ export const searchBySearchTerm = async (search: ISearchByTerm) => {
       { website: search.website, searchTerm: search.searchTerm }
     );
 
-    console.log(data);
+    return data;
   } catch (e: any) {
     window.alert(e.message);
   }
